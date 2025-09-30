@@ -4,10 +4,10 @@
 2. Ознакомьтесь с версией Django и других фреймворков в файле requirements.txt и установите виртуальное окружение по следующим шагам:
    а) В командной строке переместитесь в директорию, где распалагается папка "zametki" (cd ваш_путь)
    б) Создать и активировать виртуальное окружение:
-     # Для Windows
+     ## Для Windows
       python -m venv venv
       venv\Scripts\activate
-     # Для Linux/Mac
+     ## Для Linux/Mac
       python -m venv venv
       source venv/bin/activate
    в)через pip скачать фреймворки с версией, указанной в файле requirements.txt
