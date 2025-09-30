@@ -1,0 +1,110 @@
+/* Светлая тема (по умолчанию) */
+.theme-light body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.theme-light .header,
+.theme-light .add-note-form,
+.theme-light .notes-list {
+    background-color: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.theme-light .note-card.theme-light {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border: 1px solid #dee2e6;
+    color: #333;
+}
+
+/* Темная тема */
+.theme-dark body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.theme-dark .header,
+.theme-dark .add-note-form,
+.theme-dark .notes-list {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    color: #ffffff;
+}
+
+.theme-dark .note-card.theme-dark {
+    background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+    border: 1px solid #444;
+    color: #ffffff;
+}
+
+.theme-dark .form-control {
+    background-color: #3d3d3d;
+    color: white;
+    border-color: #555;
+}
+
+.theme-dark select {
+    background-color: #3d3d3d;
+    color: white;
+    border-color: #555;
+}
+
+/* Синяя тема */
+.theme-blue body {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.theme-blue .header,
+.theme-blue .add-note-form,
+.theme-blue .notes-list {
+    background-color: #bbdefb;
+    box-shadow: 0 2px 20px rgba(33, 150, 243, 0.2);
+    color: #0d47a1;
+}
+
+.theme-blue .note-card.theme-blue {
+    background: linear-gradient(135deg, #bbdefb, #90caf9);
+    border: 1px solid #64b5f6;
+    color: #0d47a1;
+}
+
+.theme-blue .form-control {
+    background-color: #e3f2fd;
+    border-color: #90caf9;
+}
+
+.theme-blue select {
+    background-color: #e3f2fd;
+    border-color: #90caf9;
+}
+
+/* Зеленая тема */
+.theme-green body {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.theme-green .header,
+.theme-green .add-note-form,
+.theme-green .notes-list {
+    background-color: #c8e6c9;
+    box-shadow: 0 2px 20px rgba(76, 175, 80, 0.2);
+    color: #1b5e20;
+}
+
+.theme-green .note-card.theme-green {
+    background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
+    border: 1px solid #81c784;
+    color: #1b5e20;
+}
+
+.theme-green .form-control {
+    background-color: #e8f5e9;
+    border-color: #a5d6a7;
+}
+
+.theme-green select {
+    background-color: #e8f5e9;
+    border-color: #a5d6a7;
+}

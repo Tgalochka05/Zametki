@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="notes-app">
+    <!-- Форма добавления заметки -->
+    <div class="add-note-form">
+        <h2>Добавить новую заметку</h2>
+        <form method="post" action="{% url 'add_note' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="title" placeholder="Заголовок" required class="form-control">
+            </div>
+            <div class="form-group">
+                <textarea name="content" placeholder="Содержание заметки..." rows="4" required class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить заметку</button>
+        </form>
+    </div>
+
+    <!-- Список заметок -->
+    <div class="notes-list">
+        <h2>Мои заметки ({{ notes|length }})</h2>
+        
+        {% if notes %}
+            {% for note in notes %}
+            <div class="note-card theme-{{ note.theme }}">
+                <div class="note-header">
+                    <h3>{{ note.title }}</h3>
+                    <form method="post" action="{% url 'delete_note' note.id %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-delete" onclick="return confirm('Удалить эту заметку?')">×</button>
+                    </form>
+                </div>
+                <div class="note-content">
+                    <p>{{ note.content }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-notes">Заметок пока нет. Добавьте первую!</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
