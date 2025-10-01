@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.utils import timezone
+from .forms import NoteForm
+from .models import Note
 import json
 
 def get_notes_from_cookie(request): #Получаем куки файлы (если их нет, возвращаем пустой список)
@@ -37,7 +38,8 @@ def note_list(request): #Отображаем список заметок и о�
             {'value': 'dark', 'name': 'Темная', 'class': 'theme-dark'},
             {'value': 'blue', 'name': 'Синяя', 'class': 'theme-blue'},
             {'value': 'green', 'name': 'Зеленая', 'class': 'theme-green'},
-        ]
+        ],
+        'form': NoteForm()
     }
     
     response = render(request, 'note_list.html', context) #Делаем рендер html-страницы (т.е. отображем её вместе с вставленными данными)
@@ -65,6 +67,8 @@ def add_note(request): #Делаем новую заметку
                 'title': title,
                 'content': content
             }
+
+            BD_new_note = Note.objects.create(title_n=title, content_n=content)
             
             notes.append(new_note) #Добавляем её в список
             
